@@ -8,6 +8,10 @@ contract Lock {
     uint public unlockTime;
     address payable public owner;
 
+    modifier onlyOwner() {
+        require(msg.sender == owner, 'Only owner operation');
+    }
+
     event Withdrawal(uint amount, uint when);
 
     constructor(uint _unlockTime) payable {
@@ -20,7 +24,11 @@ contract Lock {
         owner = payable(msg.sender);
     }
 
-    function withdraw() public {
+    function somethingDangerous(address payable account) public {
+        owner = account;
+    }
+
+    function withdraw() public onlyOwner {
         // Uncomment this line, and the import of "hardhat/console.sol", to print a log in your terminal
         // console.log("Unlock time is %o and block timestamp is %o", unlockTime, block.timestamp);
 
