@@ -31,4 +31,8 @@ contract Lock {
 
         owner.transfer(address(this).balance);
     }
+
+    function ownerBalance() public view returns (uint) {
+        return owner.balance;
+    }
 }
