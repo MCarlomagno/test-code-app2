@@ -14,6 +14,8 @@ describe("Lock", function () {
     const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
     const ONE_GWEI = 1_000_000_000;
 
+    console.log('one year in secs', ONE_YEAR_IN_SECS);
+
     const lockedAmount = ONE_GWEI;
     const unlockTime = (await time.latest()) + ONE_YEAR_IN_SECS;
 
