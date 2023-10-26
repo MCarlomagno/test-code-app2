@@ -20,7 +20,7 @@ contract Lock {
         owner = payable(msg.sender);
     }
 
-    function withdraw() public {
+    function withdraw() public returns (uint) {
         // Uncomment this line, and the import of "hardhat/console.sol", to print a log in your terminal
         // console.log("Unlock time is %o and block timestamp is %o", unlockTime, block.timestamp);
 
@@ -30,5 +30,6 @@ contract Lock {
         emit Withdrawal(address(this).balance, block.timestamp);
 
         owner.transfer(address(this).balance);
+        return address(this).balance;
     }
 }
