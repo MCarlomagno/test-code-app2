@@ -1,5 +1,9 @@
 {
   "name": "hardhat-project",
+  "author": {
+    "name": "Marcos Carlomagno",
+    "email": "marcoscarlomagno1@gmail.com"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
     "hardhat": "^2.17.0"
